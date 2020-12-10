@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer as Router } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import HomeScreen from './src/screens/HomeScreen';
+import { Text } from 'react-native';
+import DetailsScreen from './src/screens/DetailsScreen';
+
+const Stack = createStackNavigator();
+
+function LogoTitle() {
+  return <Text>HomeScreen</Text>;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              textAlign: 'center',
+            },
+          }}
+        >
+          <Stack.Screen
+            name='HomeScreen'
+            component={HomeScreen}
+            options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
+          />
+          <Stack.Screen
+            name='Details'
+            component={DetailsScreen}
+            options={{ title: 'Details' }}
+          />
+        </Stack.Navigator>
+      </Router>
+    );
+  }
+}
