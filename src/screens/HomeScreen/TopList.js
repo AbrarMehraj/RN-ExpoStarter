@@ -33,7 +33,7 @@ const Item = ({ item, onPress, style, selectedItem }) => (
     <Text style={styles.title}>{item.title}</Text>
 
     {selectedItem && selectedItem.id === item.id && (
-      <Text style={styles.border} />
+      <Text style={styles.border}></Text>
     )}
 
     {/* {!selectedItem && item.id === '1' && <Text style={styles.border}></Text>} */}

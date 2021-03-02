@@ -7,15 +7,13 @@ import ToDo from './ToDo';
 import TopList from './TopList';
 
 const HomeScreen = () => {
-  const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState({
+    id: '1',
+    title: 'Overdue',
+  });
   return (
     <View style={styles.container}>
       <TopList setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
-
-      {/* <View>{selectedItem.id === '1' && <OverDue />}</View> */}
-      {/* {selectedItem.id === '2' && <ToDo />} */}
-      {/* {selectedItem.id === '3' && <InReview />} */}
-      {/* {selectedItem.id === '4' && <Completed />} */}
     </View>
   );
 };

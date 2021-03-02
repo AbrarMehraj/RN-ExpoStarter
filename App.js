@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import * as React from 'react';
 import { NavigationContainer as Router } from '@react-navigation/native';
 import StackNavigation from './src/Navigation/StackNavigation';
+import { Text } from 'react-native';
 
 const App = () => {
   return (
