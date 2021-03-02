@@ -1,6 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
+import Feed from '../screens/Feed';
+import Setting from '../screens/Setting';
+import { Text, View } from 'react-native';
 
 const Stack = createStackNavigator();
 const StackNavigation = () => {
@@ -20,9 +23,18 @@ const StackNavigation = () => {
       <Stack.Screen
         name='Home'
         component={HomeScreen}
-        // options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
-        options={{ title: 'HomeScreen' }}
+        options={{
+          headerRight: () => (
+            <View style={{ flexDirection: 'row', marginRight: 10 }}>
+              <Text style={{ marginRight: 10 }}>Search</Text>
+              <Text>Filter</Text>
+            </View>
+          ),
+        }}
       />
+
+      <Stack.Screen name='Feed' component={Feed} />
+      <Stack.Screen name='Setting' component={Setting} />
     </Stack.Navigator>
   );
 };

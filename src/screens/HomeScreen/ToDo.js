@@ -1,14 +1,12 @@
 import React from 'react';
 import {
   Image,
-  SafeAreaView,
   ScrollView,
-  StatusBar,
+  //   StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
 
 const data = [
   {

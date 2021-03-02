@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import BottomNavigation from '../../Navigation/BottomNavigation';
 import Completed from './Completed';
 import InReview from './InReview';
 import OverDue from './OverDue';
@@ -19,16 +20,27 @@ const HomeScreen = () => {
       {selectedItem.id === '2' && <ToDo />}
       {selectedItem.id === '3' && <InReview />}
       {selectedItem.id === '4' && <Completed />}
+
+      <BottomNavigation />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#fff',
+    // position: 'relative',
+  },
+  bottom: {
+    flexDirection: 'row',
+    backgroundColor: 'green',
+    width: '100%',
+    position: 'absolute',
+    bottom: 0,
+    height: 50,
+    justifyContent: 'space-between',
   },
 });
 

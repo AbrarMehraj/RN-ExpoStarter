@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-class DetailsScpreen extends Component {
+class DetailsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
