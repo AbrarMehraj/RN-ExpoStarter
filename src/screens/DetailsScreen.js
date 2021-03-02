@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-class DetailsScreen extends Component {
+class DetailsScpreen extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -9,7 +9,7 @@ class DetailsScreen extends Component {
 
         <Button
           title='Go to HomeScreen'
-          onPress={() => this.props.navigation.push('Details')}
+          onPress={() => this.props.navigation.navigate('Home')}
         />
       </View>
     );
