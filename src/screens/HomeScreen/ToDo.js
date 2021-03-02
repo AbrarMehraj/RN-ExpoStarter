@@ -41,6 +41,22 @@ const data = [
     image: '',
     work: 'Homework',
   },
+  {
+    id: '4f',
+    subject: 'Mathematics',
+    topic: 'Algebra',
+    date: '25 jan 2020',
+    image: '',
+    work: 'Homework',
+  },
+  {
+    id: '4d',
+    subject: 'Mathematics',
+    topic: 'Algebra',
+    date: '25 jan 2020',
+    image: '',
+    work: 'Homework',
+  },
 ];
 
 const ToDo = () => {
@@ -76,7 +92,7 @@ const ToDo = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: '91%',
+    height: '85%',
     width: '100%',
     padding: 15,
     backgroundColor: 'whitesmoke',
