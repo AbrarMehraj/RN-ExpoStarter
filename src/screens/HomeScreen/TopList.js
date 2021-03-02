@@ -32,11 +32,7 @@ const Item = ({ item, onPress, style, selectedItem }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
     <Text style={styles.title}>{item.title}</Text>
 
-    {selectedItem && selectedItem.id === item.id && (
-      <Text style={styles.border}></Text>
-    )}
-
-    {/* {!selectedItem && item.id === '1' && <Text style={styles.border}></Text>} */}
+    {selectedItem?.id === item.id && <Text style={styles.border}></Text>}
   </TouchableOpacity>
 );
 
@@ -55,23 +51,23 @@ const TopList = ({ setSelectedItem, selectedItem }) => {
   };
 
   return (
-    <View>
-      <SafeAreaView style={styles.container}>
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          horizontal
-        />
-      </SafeAreaView>
-    </View>
+    // <View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        horizontal
+      />
+    </SafeAreaView>
+    // </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    // marginTop: StatusBar.currentHeight || 0,
+    // marginTop: 50,
   },
   item: {
     padding: 20,
