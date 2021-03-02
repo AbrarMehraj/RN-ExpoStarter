@@ -14,6 +14,11 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <TopList setSelectedItem={setSelectedItem} selectedItem={selectedItem} />
+
+      {selectedItem.id === '1' && <OverDue />}
+      {selectedItem.id === '2' && <ToDo />}
+      {selectedItem.id === '3' && <InReview />}
+      {selectedItem.id === '4' && <Completed />}
     </View>
   );
 };
